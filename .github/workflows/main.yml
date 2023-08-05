@@ -41,6 +41,6 @@ jobs:
           passphrase: wildan121
           script: |
             sudo docker pull wildan121/test:${{github.sha}}
-            docker run -d -p 3002:3002 --name test-container wildan121/test:${{github.sha}}
+            sudo docker run -d -p 3002:3002 --name test-container wildan121/test:${{github.sha}}
 
 
