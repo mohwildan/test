@@ -37,8 +37,7 @@ jobs:
         with:
           host: ${{secrets.SERVER}}
           username: ${{secrets.SERVER_USERNAME}}
-          password: ${{secrets.SERVER_PASSWORD}}
-          port: ${{secrets.SERVER_PORT}}
+          key: ${{secrets.SERVER_SHH_KEY}}
           scripts: |
             whoami
             docker stop test || true && docker rm test || true
