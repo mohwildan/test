@@ -37,8 +37,7 @@ jobs:
         with:
           host: 103.175.217.162
           username: mw.dev
-          key: "-----BEGIN OPENSSH PRIVATE KEY-----
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+          key: "b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAYEAz19ox2A9sZ10qQBJnroMDrcT2ds/Btp1rJgkdkwnXpvBe4Dt3BcG
 SkBfe14pDScfp5t7H4jQNCyJZUUGcY/+7MlHTiSq4+IbBf/fsE6P1QFJxo9jLTsAVlrqK8
 e25ORHUTu1pn6wyuSzZuXW+YUIREPl+Pn6pdQ7/ksZAUfzYCrz12KJz0AXcu9i1OHsrAbt
@@ -73,8 +72,7 @@ q3bkFivhOpy6KTt1x4DFms3LAwP2tihQAAAMEA7Ell19IoBDIq1DIuYOggdH71122FXgIe
 hUxV4IKwd3mkUkqRAutWkOij35EHz8+TF5/UfQg+AiySIzXAgM+kfmTAE/6GNnGFGlD27d
 ErpFO8OGwvVUo39sRMBypWkZJHXstiZeK/Z9ISCw630QG9bkkr4oa44UzUT/cSbPOvyUJr
 jDOHdD09D19bogRzmstB4dHwRGco+ozxNYxUje6jgkEI8Z/NMUGbFb9wBTHvYUcdTZPxbT
-7kHI4TrXlxHyIrAAAACW13LmRldkBtdwE=
------END OPENSSH PRIVATE KEY-----"
+7kHI4TrXlxHyIrAAAACW13LmRldkBtdwE="
           scripts: |
             whoami
             docker stop test-container || true && docker rm test-container || true
