@@ -35,10 +35,10 @@ jobs:
       - name: Deploy To VPS
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: "103.175.217.162"
-          username: "mw.dev"
-          password: "Sayonara121@Sayonara121"
-          port: 22
+          host: ${{ secrets.SERVER }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
           scripts: |
             whoami
             docker stop test-container || true && docker rm test-container || true
