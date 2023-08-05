@@ -27,22 +27,3 @@ jobs:
           path: true
           tags: wildan121/test:latest
 
-  deployment:
-    needs: build
-    environment: staging
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Deploy To VPS
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.SERVER }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          port: ${{ secrets.SERVER_PORT }}
-          scripts: |
-            whoami
-            docker stop test-container || true && docker rm test-container || true
-            docker pull wildan121/test
-            docker run -d -p 3002:3002 --name test-container wildan121/test
-
-
