@@ -38,6 +38,7 @@ jobs:
           host: ${{secrets.SERVER}}
           username: ${{secrets.SERVER_USERNAME}}
           key: ${{secrets.SERVER_SHH_KEY}}
+          passphrase: wildan121
           script: |
             ssh -v ${{secrets.SERVER_USERNAME}}@${{secrets.SERVER}} "docker stop test_container || true"
             ssh -v ${{secrets.SERVER_USERNAME}}@${{secrets.SERVER}} "docker rm test_container || true"
