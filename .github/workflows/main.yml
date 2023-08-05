@@ -37,11 +37,7 @@ jobs:
         with:
           host: 103.175.217.162
           username: mw.dev
-          key: "b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACCn8lfwdQBjBxLUqWQ7cw+36LXYfLtwrHqyNeLOZUmUugAAAKAKseBOCrHg
-TgAAAAtzc2gtZWQyNTUxOQAAACCn8lfwdQBjBxLUqWQ7cw+36LXYfLtwrHqyNeLOZUmUug
-AAAEDVP6uUMorZwfgOo/nVuiW2rPR4ct/WNl42RMq9Mov2fafyV/B1AGMHEtSpZDtzD7fo
-tdh8u3CserI14s5lSZS6AAAAG21vaHdpbGRhbndpbGRhbjE1QGdtYWlsLmNvbQEC"
+          key: "b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACCn8lfwdQBjBxLUqWQ7cw+36LXYfLtwrHqyNeLOZUmUugAAAKAKseBOCrHgTgAAAAtzc2gtZWQyNTUxOQAAACCn8lfwdQBjBxLUqWQ7cw+36LXYfLtwrHqyNeLOZUmUugAAAEDVP6uUMorZwfgOo/nVuiW2rPR4ct/WNl42RMq9Mov2fafyV/B1AGMHEtSpZDtzD7fotdh8u3CserI14s5lSZS6AAAAG21vaHdpbGRhbndpbGRhbjE1QGdtYWlsLmNvbQEC"
           scripts: |
             whoami
             docker stop test-container || true && docker rm test-container || true
