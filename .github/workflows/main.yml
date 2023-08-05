@@ -14,8 +14,8 @@ jobs:
       - name: Conect To Docker HUB
         uses: docker/login-action@v2
         with: 
-          username: mohwildanwildan15@gmail.com
-          password: dckr_pat_IhSXIUa-8qUHrSbPdTvX-HVgFNo
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_TOKEN}}
 
       - name: Set Up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -37,7 +37,7 @@ jobs:
         with:
           host: 103.175.217.162
           username: mw.dev
-          key: "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"
+          password: ""
           scripts: |
             whoami
             docker stop test-container || true && docker rm test-container || true
