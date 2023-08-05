@@ -42,7 +42,7 @@ jobs:
           scripts: |
             whoami
             docker stop test-container || true && docker rm test-container || true
-            docker pull wildan121/test
-          docker run -d -p 3002:3002 --name test-container wildan121/test:${{github.sha}}
+            docker pull wildan121/test{{$github.sha}}
+            docker run -d -p 3002:3002 --name test-container wildan121/test:${{github.sha}}
 
 
