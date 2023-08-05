@@ -26,8 +26,8 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: 103.175.217.162
-          username: mw.dev 
-          key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmtdc8piwPJQ/OGmzPY4x4f0bYbrNnVLV4QCf6e9jJdat5/NpKCslEF1tjnkshKzGBsJO/yQwcsTUZTz3AaHrSqhi+LjC/ZPadP50UaUzgs7uX2ZE56QvsKtkOkUT/UGCXxlTUYM4oYWKmE83RW/VrsYPt+wQw2ERAJu3KXjwPgPIOwQpU4DQB8SeTrZza2UeMLOBHu9GO4BpQM10EiamirGnM9wJrJ3f4yfhY+2EN5ozHiXW7VMJ1EhLNVitwNwOLvvqnvmtG2emSlz88UO0RSwhuig3oxr0MidbREJtUHlZ3dN2xVDLTVBvO3NqRaxGESlZejVb5tFOIOu+mpih19NzUCaEjhlvkudp75xqtTktjDr3CoN6E0mfRJ3HDmfL4xvtlDJ37LKUvvx9VETEAVzbugb7dTtlRhwZKU/d4akHfPPZdQlFAYApvsuHxd3v+u6Ol52evzqIUgEAftoDBkRmyol0+1FtgLwgUmkLvE8CK75mVPopJhHGo8/D55E0= apple@MacBook-Pro-3.local"
+          username: "mw.dev"
+          password: "Sayonara121@Sayonara121"
           script: |
             ssh mw.dev@103.175.217.162 "docker stop test_container || true"
             ssh mw.dev@103.175.217.162 "docker rm test_container || true"
