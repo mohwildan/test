@@ -39,10 +39,10 @@ jobs:
           username: ${{secrets.SERVER_USERNAME}}
           key: ${{secrets.SERVER_SHH_KEY}}
           passphrase: wildan121
-          script: |
-            ssh -v ${{secrets.SERVER_USERNAME}}@${{secrets.SERVER}} "docker stop test_container || true"
-            ssh -v ${{secrets.SERVER_USERNAME}}@${{secrets.SERVER}} "docker rm test_container || true"
-            ssh -v ${{secrets.SERVER_USERNAME}}@${{secrets.SERVER}} "docker pull wildan121/test:d89c95434f8af45cf79d72cfed17fecedabf1de5"
-            ssh -v ${{secrets.SERVER_USERNAME}}@${{secrets.SERVER}} "docker run -d --name test_container -p 80:80 wildan121/test:d89c95434f8af45cf79d72cfed17fecedabf1de5"
+          scripts: |
+            whoami
+            docker stop test-container || true && docker rm test-container || true
+            docker pull wildan121/test{{$github.sha}}
+            docker run -d -p 3002:3002 --name test-container wildan121/test:${{github.sha}}
 
 
