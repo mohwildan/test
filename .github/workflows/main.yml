@@ -7,9 +7,9 @@ on:
 
 jobs:
   build_and_push:
-    # environment: staging
-    # runs-on: ubuntu-latest
-    # steps:
+    environment: staging
+    runs-on: ubuntu-latest
+    steps:
     #   - name: Checkout repository
     #     uses: actions/checkout@v2
 
