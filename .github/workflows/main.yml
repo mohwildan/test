@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v4
         with: 
           file: ./Dockerfile
-          path: true
+          push: true
           tags: wildan121/test:${{github.sha}}
 
   deployment:
@@ -33,11 +33,11 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Deploy To VPS
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@master
         with:
-          host: "103.175.217.162"
-          username: "mw.dev"
-          password: "Sayonara121@Sayonara121"
+          host: 103.175.217.162
+          password: Sayonara121@Sayonara121
+          username: mw.dev
           port: 22
           scripts: |
             whoami
