@@ -40,9 +40,7 @@ jobs:
           key: ${{secrets.SERVER_SHH_KEY}}
           passphrase: wildan121
           script: |
-            sudo whoami
-            sudo docker stop test-container || true && docker rm test-container || true
-            sudo docker pull wildan121/test${{github.sha}}
+            sudo docker pull wildan121/test:${{github.sha}}
             docker run -d -p 3002:3002 --name test-container wildan121/test:${{github.sha}}
 
 
