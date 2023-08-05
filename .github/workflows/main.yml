@@ -25,7 +25,7 @@ jobs:
         with: 
           file: ./Dockerfile
           path: true
-          tags: ${{secrets.DOCKER_USERNAME}}/test:latest
+          tags: wildan121/test:latest
 
   deployment:
     needs: build
