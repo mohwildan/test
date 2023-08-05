@@ -14,8 +14,8 @@ jobs:
       - name: Conect To Docker HUB
         uses: docker/login-action@v2
         with: 
-          username: ${{secrets.DOCKER_USERNAME}}
-          password: ${{secrets.DOCKER_TOKEN}}
+          username: mohwildanwildan15@gmail.com
+          password: dckr_pat_IhSXIUa-8qUHrSbPdTvX-HVgFNo
 
       - name: Set Up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -35,13 +35,13 @@ jobs:
       - name: Deploy To VPS
         uses: appleboy/ssh-action@master
         with:
-          host: ${{secrets.SERVER}}
-          username: ${{secrets.SERVER_USERNAME}}
-          key: ${{secrets.SERVER_SHH_KEY}}
+          host: 103.175.217.162
+          username: mw.dev
+          key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmtdc8piwPJQ/OGmzPY4x4f0bYbrNnVLV4QCf6e9jJdat5/NpKCslEF1tjnkshKzGBsJO/yQwcsTUZTz3AaHrSqhi+LjC/ZPadP50UaUzgs7uX2ZE56QvsKtkOkUT/UGCXxlTUYM4oYWKmE83RW/VrsYPt+wQw2ERAJu3KXjwPgPIOwQpU4DQB8SeTrZza2UeMLOBHu9GO4BpQM10EiamirGnM9wJrJ3f4yfhY+2EN5ozHiXW7VMJ1EhLNVitwNwOLvvqnvmtG2emSlz88UO0RSwhuig3oxr0MidbREJtUHlZ3dN2xVDLTVBvO3NqRaxGESlZejVb5tFOIOu+mpih19NzUCaEjhlvkudp75xqtTktjDr3CoN6E0mfRJ3HDmfL4xvtlDJ37LKUvvx9VETEAVzbugb7dTtlRhwZKU/d4akHfPPZdQlFAYApvsuHxd3v+u6Ol52evzqIUgEAftoDBkRmyol0+1FtgLwgUmkLvE8CK75mVPopJhHGo8/D55E0= apple@MacBook-Pro-3.local
           scripts: |
             whoami
             docker stop test || true && docker rm test || true
-            docker pull ${{vars.IMAGE_NAME}}
-            docker run -d -p 3002:3002 --name ${{vars.CONTAINER_NAME}} ${{vars.IMAGE_NAME}}
+            docker pull wildan121/test
+            docker run -d -p 3002:3002 --name test-container wildan121/test
 
 
