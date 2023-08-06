@@ -25,13 +25,13 @@ jobs:
         with: 
           file: ./Dockerfile
           push: true
-          tags: wildan121/test
+          tags: wildan121/test:${{github.sha}}
 
   deployment:
     needs: build
     environment: staging
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Deploy To VPS
         uses: appleboy/ssh-action@master
         with:
@@ -40,6 +40,8 @@ jobs:
           key: ${{secrets.SERVER_SHH_KEY}}
           passphrase: wildan121
           script: |
+            export IMAGE_TAG=${{github.sha}}
+            echo $IMAGE_TAG
             cd ~/app/test && git switch staging
             git pull 
             sudo docker compose down
