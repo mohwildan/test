@@ -3,6 +3,5 @@ services:
   my_service_golang:
     container_name: my_service_golang
     image: wildan121/test:${IMAGE_VER}
-    restart: unless-stopped
     ports:
       - "3002:3002"
