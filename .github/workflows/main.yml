@@ -25,7 +25,7 @@ jobs:
         with: 
           file: ./Dockerfile
           push: true
-          tags: wildan121/test:${{github.sha}}
+          tags: wildan121/test
 
   deployment:
     needs: build
@@ -40,7 +40,6 @@ jobs:
           key: ${{secrets.SERVER_SHH_KEY}}
           passphrase: wildan121
           script: |
-            export IMAGE_VER=${{github.sha}}
             cd ~/app/test && git switch staging
             git pull 
             sudo docker compose down
