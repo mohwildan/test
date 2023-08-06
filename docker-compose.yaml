@@ -1,11 +1,8 @@
 version: "3.8"
 services:
-  nginx-exsample:
-    container_name: nginx-exsample
-    image: nginx:latest
   my_service_golang:
     container_name: my_service_golang
-    image: wildan121/${IMAGE_VER}
+    image: wildan121/test:${IMAGE_VER}
     restart: unless-stopped
     ports:
       - "3002:3002"
