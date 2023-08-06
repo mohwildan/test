@@ -43,7 +43,6 @@ jobs:
           passphrase: wildan121
           envs: IMAGE_TAG
           script: |
-            echo $IMAGE_TAG
             cd ~/app/test && git switch staging
             git pull 
             docker compose down
