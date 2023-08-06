@@ -40,10 +40,9 @@ jobs:
           key: ${{secrets.SERVER_SHH_KEY}}
           passphrase: wildan121
           script: |
-            cd app/
-            git clone https://github.com/mohwildan/test.git
-            cd test/
-            git switch staging
+            export IMAGE_VER=${{github.sha}}
+            cd ~/app/test && git checkout -b staging
+            git pull origin staging
             sudo docker compose down
             sudo docker compose create
             sudo docker compose start

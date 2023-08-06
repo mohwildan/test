@@ -5,7 +5,7 @@ services:
     image: nginx:latest
   my_service_golang:
     container_name: my_service_golang
-    image: wildan121/${github.sha}
+    image: wildan121/${IMAGE_VER}
     restart: unless-stopped
     ports:
       - "3002:3002"
