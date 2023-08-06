@@ -2,6 +2,6 @@ version: "3.8"
 services:
   my_service_golang:
     container_name: my_service_golang
-    image: wildan121/test:${IMAGE_TAG}
+    image: "wildan121/test:${IMAGE_TAG}"
     ports:
       - "3002:3002"
