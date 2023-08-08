@@ -25,7 +25,7 @@ jobs:
         with: 
           file: ./Dockerfile
           push: true
-          tags: wildan121/test:${{github.sha}}
+          tags: wildan121/test:latest
 
   deployment:
     needs: build
@@ -46,7 +46,6 @@ jobs:
             cd ~/app/test && git switch staging
             git pull 
             docker compose down
-            docker rmi wildan121/test
             docker image prune -f
             docker compose create 
             docker compose start
