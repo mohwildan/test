@@ -5,3 +5,7 @@ services:
     image: "wildan121/test:latest"
     ports:
       - "3002:3002"
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - '6379:6379'
